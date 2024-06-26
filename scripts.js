@@ -8,7 +8,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
 
     if (name && email && phone) {
         // Send Data to Google Sheet
-        fetch('your-web-app-url', {
+        fetch('https://script.google.com/macros/s/AKfycbw-A81wwz_0w0MUlamX1Oh00u2bdcSBJfjNMc4lGrQ5nsZKq_W63euHhjOrlKhlvgej/exec', {
             method: 'POST',
             body: JSON.stringify({ name: name, email: email, phone: phone }),
             headers: {
@@ -33,20 +33,3 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         });
     }
 });
-
-
-function doPost(e) {
-    var sheet = SpreadsheetApp.openById("your-sheet-id").getSheetByName("Sheet1");
-    var data = JSON.parse(e.postData.contents);
-    
-    var newRow = [
-      data.name,
-      data.email,
-      data.phone
-    ];
-    
-    sheet.appendRow(newRow);
-    
-    return ContentService.createTextOutput(JSON.stringify({"status": "success"})).setMimeType(ContentService.MimeType.JSON);
-  }
-  
