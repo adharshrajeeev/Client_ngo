@@ -2,6 +2,10 @@ $(document).ready(function() {
     $('#registrationForm').submit(function(event) {
         event.preventDefault();
 
+        // Show loader on submit button
+        $('#submitButton').prop('disabled', true);
+        $('.spinner-border').show();
+
         // Form Validation
         let name = $('#name').val();
         let email = $('#email').val();
@@ -9,6 +13,8 @@ $(document).ready(function() {
 
         if (!name || !email || !phone) {
             alert('Please fill out all required fields.');
+            $('#submitButton').prop('disabled', false);
+            $('.spinner-border').hide();
             return;
         }
 
@@ -33,19 +39,39 @@ $(document).ready(function() {
             contentType: false, // Prevent jQuery from setting the Content-Type header
             success: function(response) {
                 console.log('Success:', response);
-                showToastNotification(); // Optional: Show toast notification on successful submission
+                showSuccessToastNotification(); // Show success toast notification
+                clearForm(); // Clear the form after successful submission
+                $('#submitButton').prop('disabled', false);
+                $('.spinner-border').hide();
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.error('Error:', textStatus, errorThrown);
-                alert('Error submitting form. Please try again later.');
+                showErrorToastNotification(); // Show error toast notification
+                clearForm(); // Clear the form even if there was an error
+                $('#submitButton').prop('disabled', false);
+                $('.spinner-border').hide();
             }
         });
     });
 
-    // Function to show toast notification
-    function showToastNotification() {
+    // Function to show success toast notification
+    function showSuccessToastNotification() {
         let toast = new bootstrap.Toast(document.getElementById('toastNotification'));
         toast.show();
+    }
+
+    // Function to show error toast notification
+    function showErrorToastNotification() {
+        let toast = new bootstrap.Toast(document.getElementById('errorToastNotification'));
+        toast.show();
+    }
+
+    // Function to clear the form
+    function clearForm() {
+        $('#registrationForm')[0].reset();
+        $('#passportPhotoPreview').hide();
+        $('#certificatePhotoPreview').hide();
+        $('.custom-file-label').text('Choose file');
     }
 
     // Function to display image preview and filename
