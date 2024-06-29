@@ -71,7 +71,7 @@ $(document).ready(function() {
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error('Error:', textStatus, errorThrown);
                     console.error('jqXHR:', jqXHR);
-                    showErrorToastNotification(); // Show error toast notification
+                    // showErrorToastNotification(); // Show error toast notification
                     clearForm(); // Clear the form even if there was an error
                     $('#submitButton').prop('disabled', false);
                     $('.spinner-border').hide();
