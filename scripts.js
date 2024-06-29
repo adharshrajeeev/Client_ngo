@@ -2,57 +2,84 @@ $(document).ready(function() {
     $('#registrationForm').submit(function(event) {
         event.preventDefault();
 
-        // Show loader on submit button
-        $('#submitButton').prop('disabled', true);
-        $('.spinner-border').show();
+        // Remove was-validated class initially
+        $(this).removeClass('was-validated');
 
-        // Form Validation
-        let name = $('#name').val();
-        let email = $('#email').val();
-        let phone = $('#phone').val();
-
-        if (!name || !email || !phone) {
-            alert('Please fill out all required fields.');
-            $('#submitButton').prop('disabled', false);
-            $('.spinner-border').hide();
+        // Check form validity
+        if (this.checkValidity() === false) {
+            event.stopPropagation();
+            $(this).addClass('was-validated');
             return;
         }
 
-        // Handle Image Uploads
-        let passportPhotoFile = $('#passportPhoto')[0].files[0];
+        // Show loader on submit button
+        $('#submitButton').prop('disabled', true);
+        $('.spinner-border').show();
+        $('#loadingModal').modal('show');
+
+        // Proceed with form submission logic
+        let name = $('#name').val();
+        let email = $('#email').val();
+        let phone = $('#phone').val();
         let certificatePhotoFile = $('#certificatePhoto')[0].files[0];
+
+        if (!name || !email || !phone || !certificatePhotoFile) {
+            alert('Please fill out all required fields and upload the certificate photo.');
+            $('#submitButton').prop('disabled', false);
+            $('.spinner-border').hide();
+            $('#loadingModal').modal('hide');
+            return;
+        }
+
+        // Phone number validation on blur
+        let phoneValue = $('#phone').val().trim();
+        if (phoneValue.length !== 10 || isNaN(phoneValue)) {
+            $('#phone').addClass('is-invalid');
+            $('#submitButton').prop('disabled', false);
+            $('.spinner-border').hide();
+            $('#loadingModal').modal('hide');
+            return;
+        }
 
         // Create FormData object to send both form data and files
         let formData = new FormData();
         formData.append('name', name);
         formData.append('email', email);
         formData.append('phone', phone);
-        formData.append('passportPhoto', passportPhotoFile);
-        formData.append('certificatePhoto', certificatePhotoFile);
 
-        // Send formData to Google Sheets via ajax
-        $.ajax({
-            url: 'https://script.google.com/macros/s/AKfycbxHdbJYXvd_lauCWLcuj02jnp6YmZ8GQKvK-bc6tUhO0q7dhsB05Ex3Nn2vQHoaD7NKrQ/exec',
-            type: 'POST',
-            data: formData,
-            processData: false, // Prevent jQuery from automatically processing the data
-            contentType: false, // Prevent jQuery from setting the Content-Type header
-            success: function(response) {
-                console.log('Success:', response);
-                showSuccessToastNotification(); // Show success toast notification
-                clearForm(); // Clear the form after successful submission
-                $('#submitButton').prop('disabled', false);
-                $('.spinner-border').hide();
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.error('Error:', textStatus, errorThrown);
-                console.error('jqXHR:', jqXHR);
-                // showErrorToastNotification(); // Show error toast notification
-                clearForm(); // Clear the form even if there was an error
-                $('#submitButton').prop('disabled', false);
-                $('.spinner-border').hide();
-            }
-        });
+        let reader = new FileReader();
+        reader.onloadend = function() {
+            let base64data = reader.result.split(',')[1]; // Get the Base64 part of the string
+            formData.append('certificatePhotoBase64', base64data);
+
+            // Send formData to Google Sheets via ajax
+            const scriptUrl = "https://script.google.com/macros/s/AKfycbyZiWp7YWwTau0B4MRxDUDDb9J2fNMQDl0bXhX_w25BEYzECn-aDTP_SaMdLs98U5srFQ/exec"
+            $.ajax({
+                url: scriptUrl,
+                type: 'POST',
+                data: formData,
+                processData: false, // Prevent jQuery from automatically processing the data
+                contentType: false, // Prevent jQuery from setting the Content-Type header
+                success: function(response) {
+                    console.log('Success:', response);
+                    showSuccessToastNotification(); // Show success toast notification
+                    clearForm(); // Clear the form after successful submission
+                    $('#submitButton').prop('disabled', false);
+                    $('.spinner-border').hide();
+                    $('#loadingModal').modal('hide');
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error('Error:', textStatus, errorThrown);
+                    console.error('jqXHR:', jqXHR);
+                    showErrorToastNotification(); // Show error toast notification
+                    clearForm(); // Clear the form even if there was an error
+                    $('#submitButton').prop('disabled', false);
+                    $('.spinner-border').hide();
+                    $('#loadingModal').modal('hide');
+                }
+            });
+        };
+        reader.readAsDataURL(certificatePhotoFile);
     });
 
     // Function to show success toast notification
@@ -70,9 +97,9 @@ $(document).ready(function() {
     // Function to clear the form
     function clearForm() {
         $('#registrationForm')[0].reset();
-        $('#passportPhotoPreview').hide();
         $('#certificatePhotoPreview').hide();
         $('.custom-file-label').text('Choose file');
+        $('.form-control').removeClass('is-valid').removeClass('is-invalid');
     }
 
     // Function to display image preview and filename
@@ -85,12 +112,7 @@ $(document).ready(function() {
             reader.readAsDataURL(file);
 
             // Display filename in the label
-            let labelElement = $('#' + previewId + 'Label');
-            if (labelElement.length) {
-                labelElement.text(file.name);
-            } else {
-                console.error('Label element not found for previewId: ' + previewId);
-            }
+            $('#' + previewId).siblings('.custom-file-label').text(file.name);
         }
     }
 
@@ -99,5 +121,20 @@ $(document).ready(function() {
         let previewId = $(this).data('preview');
         let file = event.target.files[0];
         displayImagePreview(file, previewId);
+    });
+
+    // Phone number validation on blur
+    $('#phone').blur(function() {
+        let phoneValue = $(this).val().trim();
+        if (phoneValue.length !== 10 || isNaN(phoneValue)) {
+            $(this).addClass('is-invalid');
+        } else {
+            $(this).removeClass('is-invalid').addClass('is-valid');
+        }
+    });
+
+    // Add event listeners to validate fields on interaction
+    $('#name, #email, #phone, #certificatePhoto').on('input', function() {
+        $(this).removeClass('is-invalid').addClass('is-valid');
     });
 });
