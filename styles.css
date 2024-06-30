@@ -28,3 +28,12 @@
     height: 200px;
     object-fit: cover;
 }
+.register-link {
+    color: inherit; /* Inherits the card title color */
+    text-decoration: none; /* Removes underline */
+}
+
+.register-link:hover {
+    color: #007bff; /* Bootstrap's primary color */
+    text-decoration: underline; /* Adds underline on hover */
+}

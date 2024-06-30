@@ -138,3 +138,53 @@ $(document).ready(function() {
         $(this).removeClass('is-invalid').addClass('is-valid');
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const languageDropdownItems = document.querySelectorAll('.dropdown-item[data-lang]');
+    const textElements = {
+        welcomeMessage: document.querySelector('.jumbotron .display-4'),
+        journeyMessage: document.querySelector('.jumbotron .lead'),
+        aboutUs: document.querySelector('#about h2'),
+        aboutUsText: document.querySelector('#about p'),
+        registerNow: document.querySelector('.card-title a.register-link')
+    };
+
+    function setLanguage(lang) {
+        const translation = translations[lang];
+        if (!translation) return;
+
+        textElements.welcomeMessage.textContent = translation.welcomeMessage;
+        textElements.journeyMessage.textContent = translation.journeyMessage;
+        textElements.aboutUs.textContent = translation.aboutUs;
+        textElements.aboutUsText.textContent = translation.aboutUsText;
+        textElements.registerNow.textContent = translation.registerNow;
+    }
+
+    languageDropdownItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedLang = e.target.getAttribute('data-lang');
+            setLanguage(selectedLang);
+        });
+    });
+
+    // Set default language
+    setLanguage('en');
+});
+
+const translations = {
+    en: {
+        welcomeMessage: "Welcome to Our College",
+        journeyMessage: "Your journey to success starts here",
+        aboutUs: "About Us",
+        aboutUsText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus.",
+        registerNow: "Register Now »"
+    },
+    hi: {
+        welcomeMessage: "हमारे कॉलेज में आपका स्वागत है",
+        journeyMessage: "आपकी सफलता की यात्रा यहां से शुरू होती है",
+        aboutUs: "हमारे बारे में",
+        aboutUsText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus.",
+        registerNow: "अभी पंजीकरण करें »"
+    }
+};
