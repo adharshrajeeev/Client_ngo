@@ -137,15 +137,15 @@ $(document).ready(function() {
     $('#name, #email, #phone, #certificatePhoto').on('input', function() {
         $(this).removeClass('is-invalid').addClass('is-valid');
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
     const languageDropdownItems = document.querySelectorAll('.dropdown-item[data-lang]');
     const textElements = {
         welcomeMessage: document.querySelector('.jumbotron .display-4'),
         journeyMessage: document.querySelector('.jumbotron .lead'),
         aboutUs: document.querySelector('#about h2'),
         aboutUsText: document.querySelector('#about p'),
+        ourMisson: document.querySelector("#mission h2"),
+        ourMissionText: document.querySelector("#mission p"),
         registerNow: document.querySelector('.card-title a.register-link')
     };
 
@@ -158,6 +158,19 @@ document.addEventListener('DOMContentLoaded', () => {
         textElements.aboutUs.textContent = translation.aboutUs;
         textElements.aboutUsText.textContent = translation.aboutUsText;
         textElements.registerNow.textContent = translation.registerNow;
+        textElements.ourMisson.textContent = translation.ourMisson;
+        textElements.ourMissionText.textContent = translation.ourMissionText;
+
+        // Update card section translations
+        $('.card').each(function(index) {
+            const cardTitle = $(this).find('.card-title');
+            const cardText = $(this).find('.card-text');
+
+            if (cardTitle.length > 0 && translation.cards && translation.cards[index]) {
+                cardTitle.text(translation.cards[index].title);
+                cardText.text(translation.cards[index].text);
+            }
+        });
     }
 
     languageDropdownItems.forEach(item => {
@@ -171,20 +184,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set default language
     setLanguage('en');
 });
-
 const translations = {
     en: {
         welcomeMessage: "Welcome to Our College",
         journeyMessage: "Your journey to success starts here",
         aboutUs: "About Us",
-        aboutUsText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus.",
-        registerNow: "Register Now »"
+        aboutUsText: "Our organization is dedicated to guiding students towards successful academic careers. We believe in providing comprehensive and trustworthy information to help you make informed decisions about your education. With a focus on integrity and transparency, we strive to be your reliable partner in the college admission process.",
+        registerNow: "Register Now »",
+        ourMisson: "Our Mission",
+        ourMissionText: "Our mission is to empower students with accurate information and trustworthy guidance in choosing the perfect college or institution. As an authoritative body recognized under CHECK oversight, we provide a safe haven from fraudulent consultants and unverified courses, ensuring your educational path is secure and promising."
     },
     hi: {
         welcomeMessage: "हमारे कॉलेज में आपका स्वागत है",
         journeyMessage: "आपकी सफलता की यात्रा यहां से शुरू होती है",
         aboutUs: "हमारे बारे में",
-        aboutUsText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus.",
-        registerNow: "अभी पंजीकरण करें »"
+        aboutUsText: "हमारा संगठन छात्रों को सफल शैक्षणिक करियर की ओर मार्गदर्शन करने के लिए समर्पित है। हमें विश्वसनीय और विश्वसनीय जानकारी प्रदान करने में विश्वास है ताकि आप अपने शिक्षा के बारे में सूचित निर्णय ले सकें। ईमानदारी और पारदर्शिता पर ध्यान केंद्रित करके, हम कॉलेज प्रवेश प्रक्रिया में आपका विश्वसनीय साथी बनने का प्रयास करते हैं।",
+        registerNow: "अभी पंजीकरण करें »",
+        ourMisson: "हमारा मिशन",
+        ourMissionText: "हमारा मिशन छात्रों को सही जानकारी और विश्वसनीय मार्गदर्शन प्रदान करना है ताकि वे सही कॉलेज या संस्थान चुन सकें। एक CHECK पर देखरेख के तहत मान्यता प्राप्त देहायक शरण अप्रमाणिक सलाहकारों और अप्रमाणिक पाठ्यक्रमों से सुरक्षित और वादात्मक शिक्षात्मक पथ सुनिश्चित करते हैं।"
     }
 };

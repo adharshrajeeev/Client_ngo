@@ -19,8 +19,7 @@
         }
 
         .modal-content {
-            background-color: rgba(255, 255, 255, 0);
-            border: none;
+            background-color: #ffffff !important;
         }
 
         .modal-backdrop.show {
@@ -30,7 +29,6 @@
 </head>
 
 <body>
-    <!-- Navbar -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">NGO</a>
@@ -44,7 +42,7 @@
                     <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact Us</a>
+                    <a class="nav-link" href="#mission">Our Mission</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="registration.html">Registration</a>
@@ -62,7 +60,6 @@
             </ul>
         </div>
     </nav>
-
 
     <!-- Registration Form -->
     <section id="registration" class="container my-5">
@@ -131,7 +128,7 @@
     <div class="toast" id="errorToastNotification" data-delay="3000">
         <div class="toast-header">
             <strong class="mr-auto">Error</strong>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;"></button>
         </div>
         <div class="toast-body">
             Something went wrong. Please try again later.
@@ -156,7 +153,37 @@
     <!-- Footer -->
     <footer class="text-center py-4">
         &copy; 2024 NGO College Admission
+        <p><a href="#" data-toggle="modal" data-target="#termsModal">Terms and Conditions</a></p>
     </footer>
+
+    <!-- Terms and Conditions Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>*Terms and Conditions*</p>
+                    <p>Welcome to [Your Website Name]. By accessing and using this website, you agree to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern [Your Company Name]'s relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.</p>
+                    <p>*The use of this website is subject to the following terms of use:*</p>
+                    <ol>
+                        <li><strong>General Purpose:</strong> The content of the pages of this website is for your general information and use only. It is subject to change without notice.</li>
+                        <li><strong>Accuracy of Information:</strong> Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness, or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors, and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</li>
+                        <li><strong>Your Responsibility:</strong> Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services, or information available through this website meet your specific requirements.</li>
+                        <li><strong>Unauthorized Use:</strong> This website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).</li>
+                        <li><strong>Privacy Policy:</strong> Your use of this website is also governed by our Privacy Policy, which is incorporated by reference into these terms and conditions.</li>
+                        <li><strong>Governing Law:</strong> Your use of this website and any dispute arising out of such use of the website is subject to the laws of [Your Country/State].</li>
+                        <li><strong>Changes to Terms:</strong> We reserve the right to modify these terms and conditions at any time. You should check this page regularly to ensure that you are aware of any changes.</li>
+                    </ol>
+                    <p>By using this website, you signify your acceptance of these terms and conditions. If you have any questions or concerns about these terms and conditions, please contact us.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

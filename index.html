@@ -12,11 +12,19 @@
             height: auto;
             max-width: 100%;
         }
+        .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card-body {
+        flex: 1; /* Ensures card body takes remaining space */
+    }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">NGO</a>
@@ -30,7 +38,7 @@
                     <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact Us</a>
+                    <a class="nav-link" href="#mission">Our Mission</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="registration.html">Registration</a>
@@ -49,7 +57,6 @@
         </div>
     </nav>
 
-
     <!-- Main Banner -->
     <div class="jumbotron jumbotron-fluid" style="background-image: url('./images/70143594-education-banner.jpg'); background-size: cover; color: white;">
         <div class="container text-center">
@@ -58,48 +65,57 @@
         </div>
     </div>
 
-    <!-- About Section -->
-    <section id="about" class="container my-5">
-        <h2 class="text-center">About Us</h2>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus.</p>
-    </section>
+<!-- Our Mission Section -->
+<section id="mission" class="container my-5">
+    <h2 class="text-center">Our Mission</h2>
+    <p class="text-center">Our mission is to empower students with accurate information and trustworthy guidance in choosing the perfect college or institution. As an authoritative body recognized under CHECK oversight, we provide a safe haven from fraudulent consultants and unverified courses, ensuring your educational path is secure and promising.</p>
+</section>
 
-    <!-- Cards Section -->
-    <section class="container my-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./images/c6d2a4e760054d0ea65da445350b82c9.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title 1</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./images/images (1).jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title 2</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./images/main-banner13.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" style="color: red;">
-                            <a href="registration.html" class="register-link">
-                                Register Now &raquo;
-                            </a>
-                        </h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
+
+
+     <!-- Cards Section -->
+     <!-- Cards Section -->
+<section class="container my-5" id="cardsSection">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="./images/c6d2a4e760054d0ea65da445350b82c9.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" data-en="Personalized Guidance" data-hi="व्यक्तिगत मार्गदर्शन">Personalized Guidance</h5>
+                    <p class="card-text" data-en="We offer personalized guidance to help you navigate the complexities of college admissions." data-hi="हम व्यक्तिगत मार्गदर्शन प्रदान करते हैं ताकि आप कॉलेज प्रवेश के जटिलताओं का समाधान कर सकें।">We offer personalized guidance to help you navigate the complexities of college admissions.</p>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="./images/images (1).jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" data-en="Accurate Information" data-hi="सटीक जानकारी">Accurate Information</h5>
+                    <p class="card-text" data-en="Our resources are tailored to provide you with the most accurate and up-to-date information." data-hi="हमारे संसाधन आपको सबसे सटीक और अपडेटेड जानकारी प्रदान करने के लिए तैयार किए गए हैं।">Our resources are tailored to provide you with the most accurate and up-to-date information.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="./images/main-banner13.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: red;">
+                        <a href="registration.html" class="register-link" data-en="Register Now &raquo;" data-hi="अभी रजिस्टर करें &raquo;">Register Now &raquo;</a>
+                    </h5>
+                    <p class="card-text" data-en="Take the first step towards your future by registering with us today." data-hi="अपने भविष्य की ओर पहला कदम उठाएं और आज हमारे साथ रजिस्टर करें।">Take the first step towards your future by registering with us today.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="container my-5">
+    <h2 class="text-center">About Us</h2>
+    <p class="text-center">Our organization is dedicated to guiding students towards successful academic careers. We believe in providing comprehensive and trustworthy information to help you make informed decisions about your education. With a focus on integrity and transparency, we strive to be your reliable partner in the college admission process.</p>
+</section>
+
 
     <!-- Carousel Section -->
     <section class="container my-5">
@@ -139,7 +155,37 @@
     <!-- Footer -->
     <footer class="text-center py-4">
         &copy; 2024 NGO College Admission
+        <p><a href="#" data-toggle="modal" data-target="#termsModal">Terms and Conditions</a></p>
     </footer>
+
+    <!-- Terms and Conditions Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>*Terms and Conditions*</p>
+                    <p>Welcome to [Your Website Name]. By accessing and using this website, you agree to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern [Your Company Name]'s relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.</p>
+                    <p>*The use of this website is subject to the following terms of use:*</p>
+                    <ol>
+                        <li><strong>General Purpose:</strong> The content of the pages of this website is for your general information and use only. It is subject to change without notice.</li>
+                        <li><strong>Accuracy of Information:</strong> Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness, or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors, and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</li>
+                        <li><strong>Your Responsibility:</strong> Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services, or information available through this website meet your specific requirements.</li>
+                        <li><strong>Unauthorized Use:</strong> This website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).</li>
+                        <li><strong>Privacy Policy:</strong> Your use of this website is also governed by our Privacy Policy, which is incorporated by reference into these terms and conditions.</li>
+                        <li><strong>Governing Law:</strong> Your use of this website and any dispute arising out of such use of the website is subject to the laws of [Your Country/State].</li>
+                        <li><strong>Changes to Terms:</strong> We reserve the right to modify these terms and conditions at any time. You should check this page regularly to ensure that you are aware of any changes.</li>
+                    </ol>
+                    <p>By using this website, you signify your acceptance of these terms and conditions. If you have any questions or concerns about these terms and conditions, please contact us.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
