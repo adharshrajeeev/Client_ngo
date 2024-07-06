@@ -125,4 +125,63 @@
     .invalid-feedback.show {
         display: block;
     }
+   
+    .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        width: 40%;
+        box-sizing: border-box;
+    }
+    
+    .search-bar input {
+        flex-grow: 1;
+        border: none;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px 0 0 5px;
+        box-sizing: border-box;
+        height: 40px; /* Set a consistent height */
+    }
+    
+    .search-bar button {
+        border: none;
+        background-color: #ffffff;
+        cursor: pointer;
+        padding: 0 10px;
+        border-radius: 0 5px 5px 0;
+        box-sizing: border-box;
+        height: 40px; /* Set a consistent height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .search-bar button img {
+        height: 20px;
+    }
+    
+    .dropdown-menu {
+        text-align: center; /* Center align the text */
+    }
+    
+    @media (max-width: 768px) {
+        .search-bar {
+            width: 80%;
+        }
+    
+        .search-dropdown-container {
+            flex-direction: column;
+            width: 100%;
+        }
+    
+        .dropdown-menu {
+            width: 100%; /* Ensure the dropdown spans the full width */
+            text-align: center; /* Center align the text */
+        }
+    }
+    
+    
     

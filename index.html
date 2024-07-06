@@ -34,9 +34,8 @@
         <a href="#" data-lang="en">English</a>
         <a href="#" data-lang="hi">हिन्दी</a>
     </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light"
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light"
     style="height: 400px; background-color: rgba(49, 32, 177, 0.5); background-image: url('./images/collgeCampus.jpg'); background-size: cover; background-blend-mode: overlay; background-position: center;">
     <a class="navbar-brand" href="/" style="position: absolute; top: 20px; left: 20px;">
         <img src="./images/logo.png" alt="Logo" style="height: 100px;"> <!-- Increased logo size -->
@@ -45,12 +44,34 @@
         style="position: absolute; top: 40px; left: 130px; font-size: 1.5rem; font-weight: bold;">
         Interstate Academic Support Council (IAEC)
     </span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
-        style="position: absolute; top: 20px; right: 20px;">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+
+    <!-- Search bar and dropdown container -->
+    <div class="search-dropdown-container" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 80%; display: flex; justify-content: center; align-items: center; gap: 10px;">
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Type Keyword">
+            <button type="button">
+                <img src="./images/search-icon-2048x2048-zik280t3.png" alt="Search">
+            </button>
+        </div>
+
+        <!-- Dropdown menu for courses -->
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Popular Courses
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Nursing</a>
+                <a class="dropdown-item" href="#">Medical Laboratory Technology</a>
+                <a class="dropdown-item" href="#">Physiotherapy</a>
+            </div>
+        </div>
+    </div>
 </nav>
+
+
+
 
 
 
@@ -58,7 +79,7 @@
 
    <!-- Our Mission Section -->
 <section id="mission" class="container my-5">
-    <h2 class="text-center">Our Mission</h2>
+    <h2 class="text-center" style="text-decoration:underline;">Our Mission</h2>
     <p class="text-center">Our mission is to empower students with accurate information and trustworthy guidance in
         choosing the perfect college or institution. As an authoritative body recognized under CHECK oversight, we
         provide a safe haven from fraudulent consultants and unverified courses, ensuring your educational path is
@@ -86,7 +107,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="./images/images (1).jpeg" class="card-img-top" alt="...">
+                    <img src="./images/BE-Computer-Science.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title" style="color: black;">
                             <a href="rhttps://cee.kerala.gov.in/keam2024/" class="register-link" data-en="Register Now &raquo;"
@@ -102,7 +123,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="./images/main-banner13.webp" class="card-img-top" alt="...">
+                    <img src="./images/bannerimage_1557133424.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title" style="color: black;">
                             <a href="https://cdn.digialm.com/EForms/configuredHtml/756/78268/login.html" class="register-link" data-en="Register Now &raquo;"
@@ -121,7 +142,7 @@
 
 <!-- About Section -->
 <section id="about" class="container my-5">
-    <h2 class="text-center">About Us</h2>
+    <h2 class="text-center" style="text-decoration:underline;">About Us</h2>
     <p class="text-center">Our organization is dedicated to guiding students towards successful academic careers. We
         believe in providing comprehensive and trustworthy information to help you make informed decisions about
         your education. With a focus on integrity and transparency, we strive to be your reliable partner in the

@@ -29,21 +29,40 @@
 </head>
 
 <body>
-   <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg navbar-light"
-   style="height: 400px; background-color: rgba(49, 32, 177, 0.5); background-image: url('./images/collgeCampus.jpg'); background-size: cover; background-blend-mode: overlay; background-position: center;">
-   <a class="navbar-brand" href="/" style="position: absolute; top: 20px; left: 20px;">
-       <img src="./images/logo.png" alt="Logo" style="height: 100px;"> <!-- Increased logo size -->
-   </a>
-   <span class="navbar-text text-white ml-3"
-       style="position: absolute; top: 40px; left: 130px; font-size: 1.5rem; font-weight: bold;">
-       Interstate Academic Support Council (IAEC)
-   </span>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-       aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
-       style="position: absolute; top: 20px; right: 20px;">
-       <span class="navbar-toggler-icon"></span>
-   </button>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light"
+    style="height: 400px; background-color: rgba(49, 32, 177, 0.5); background-image: url('./images/collgeCampus.jpg'); background-size: cover; background-blend-mode: overlay; background-position: center;">
+    <a class="navbar-brand" href="/" style="position: absolute; top: 20px; left: 20px;">
+        <img src="./images/logo.png" alt="Logo" style="height: 100px;"> <!-- Increased logo size -->
+    </a>
+    <span class="navbar-text text-white ml-3"
+        style="position: absolute; top: 40px; left: 130px; font-size: 1.5rem; font-weight: bold;">
+        Interstate Academic Support Council (IAEC)
+    </span>
+
+    <!-- Search bar and dropdown container -->
+    <div class="search-dropdown-container" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 80%; display: flex; justify-content: center; align-items: center; gap: 10px;">
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Type Keyword">
+            <button type="button">
+                <img src="./images/search-icon-2048x2048-zik280t3.png" alt="Search">
+            </button>
+        </div>
+
+        <!-- Dropdown menu for courses -->
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Popular Courses
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Nursing</a>
+                <a class="dropdown-item" href="#">Medical Laboratory Technology</a>
+                <a class="dropdown-item" href="#">Physiotherapy</a>
+            </div>
+        </div>
+    </div>
 </nav>
 
 
