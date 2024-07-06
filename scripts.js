@@ -190,7 +190,7 @@ const translations = {
         journeyMessage: "Your journey to success starts here",
         aboutUs: "About Us",
         aboutUsText: "Our organization is dedicated to guiding students towards successful academic careers. We believe in providing comprehensive and trustworthy information to help you make informed decisions about your education. With a focus on integrity and transparency, we strive to be your reliable partner in the college admission process.",
-        registerNow: "Register Now »",
+        registerNow: "Late Medical Entry Registration »",
         ourMisson: "Our Mission",
         ourMissionText: "Our mission is to empower students with accurate information and trustworthy guidance in choosing the perfect college or institution. As an authoritative body recognized under CHECK oversight, we provide a safe haven from fraudulent consultants and unverified courses, ensuring your educational path is secure and promising."
     },
@@ -199,8 +199,22 @@ const translations = {
         journeyMessage: "आपकी सफलता की यात्रा यहां से शुरू होती है",
         aboutUs: "हमारे बारे में",
         aboutUsText: "हमारा संगठन छात्रों को सफल शैक्षणिक करियर की ओर मार्गदर्शन करने के लिए समर्पित है। हमें विश्वसनीय और विश्वसनीय जानकारी प्रदान करने में विश्वास है ताकि आप अपने शिक्षा के बारे में सूचित निर्णय ले सकें। ईमानदारी और पारदर्शिता पर ध्यान केंद्रित करके, हम कॉलेज प्रवेश प्रक्रिया में आपका विश्वसनीय साथी बनने का प्रयास करते हैं।",
-        registerNow: "अभी पंजीकरण करें »",
+        registerNow: "  लेट मेडिकल एंट्री »",
         ourMisson: "हमारा मिशन",
         ourMissionText: "हमारा मिशन छात्रों को सही जानकारी और विश्वसनीय मार्गदर्शन प्रदान करना है ताकि वे सही कॉलेज या संस्थान चुन सकें। एक CHECK पर देखरेख के तहत मान्यता प्राप्त देहायक शरण अप्रमाणिक सलाहकारों और अप्रमाणिक पाठ्यक्रमों से सुरक्षित और वादात्मक शिक्षात्मक पथ सुनिश्चित करते हैं।"
     }
+
 };
+
+function changeFontSize(action) {
+    const root = document.documentElement;
+    let currentFontSize = parseFloat(window.getComputedStyle(root).getPropertyValue('font-size'));
+    if (action === 'increase') {
+        currentFontSize += 1;
+    } else if (action === 'decrease') {
+        currentFontSize -= 1;
+    } else {
+        currentFontSize = 16; // Default font size
+    }
+    root.style.fontSize = currentFontSize + 'px';
+}

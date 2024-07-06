@@ -37,3 +37,92 @@
     color: #007bff; /* Bootstrap's primary color */
     text-decoration: underline; /* Adds underline on hover */
 }
+
+.top-bar {
+    background-color:#061795;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-bar a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+}
+
+.top-bar button {
+    background-color:#061795;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.top-bar button:hover {
+    text-decoration: underline;
+}
+
+.carousel-item img {
+    height: 600px; /* Adjust this value as needed */
+    object-fit:fill; /* Ensures the image covers the entire carousel item */
+}
+
+.card-title {
+    font-weight: bold;
+    color: #007bff; /* Blue color */
+}
+
+.card-text {
+    font-weight: 500; /* Slightly bold */
+    font-size: 16px; /* Adjust size as needed */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+#mission h2,
+    #about h2 {
+        color: #0d6efd; /* Blue color */
+        font-size: 2.5rem; /* Larger font size */
+        font-weight: bold; /* Bold font weight */
+    }
+
+    #mission p,
+    #about p {
+        font-weight: 500; /* Semi-bold font weight */
+    }
+
+
+    .main-content {
+        padding-top: 20px; /* Adjust as needed */
+        padding-bottom: 20px; /* Adjust as needed */
+    }
+    
+    #contactForm {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .invalid-feedback {
+        display: none;
+        color: red;
+        margin-top: 5px;
+    }
+    
+    .invalid-feedback.show {
+        display: block;
+    }
+    

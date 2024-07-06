@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGO College Admission</title>
+    <title>Interstate Academic Support Council (IAEC)</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -12,108 +12,120 @@
             height: auto;
             max-width: 100%;
         }
-        .card {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
 
-    .card-body {
-        flex: 1; /* Ensures card body takes remaining space */
-    }
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card-body {
+            flex: 1;
+            /* Ensures card body takes remaining space */
+        }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">NGO</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mission">Our Mission</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="registration.html">Registration</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Language
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
-                        <a class="dropdown-item" href="#" data-lang="en">English</a>
-                        <a class="dropdown-item" href="#" data-lang="hi">हिन्दी</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Banner -->
-    <div class="jumbotron jumbotron-fluid" style="background-image: url('./images/70143594-education-banner.jpg'); background-size: cover; color: white;">
-        <div class="container text-center">
-            <h1 class="display-4">Welcome to Our College</h1>
-            <p class="lead">Your journey to success starts here</p>
-        </div>
+    <div class="top-bar">
+        <button onclick="changeFontSize('increase')">+A</button>
+        <button onclick="changeFontSize('reset')">A</button>
+        <button onclick="changeFontSize('decrease')">-A</button>
+        <a href="#" data-lang="en">English</a>
+        <a href="#" data-lang="hi">हिन्दी</a>
     </div>
 
-<!-- Our Mission Section -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light"
+    style="height: 400px; background-color: rgba(49, 32, 177, 0.5); background-image: url('./images/collgeCampus.jpg'); background-size: cover; background-blend-mode: overlay; background-position: center;">
+    <a class="navbar-brand" href="/" style="position: absolute; top: 20px; left: 20px;">
+        <img src="./images/logo.png" alt="Logo" style="height: 100px;"> <!-- Increased logo size -->
+    </a>
+    <span class="navbar-text text-white ml-3"
+        style="position: absolute; top: 40px; left: 130px; font-size: 1.5rem; font-weight: bold;">
+        Interstate Academic Support Council (IAEC)
+    </span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
+        style="position: absolute; top: 20px; right: 20px;">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+
+
+    <!-- Navbar -->
+
+   <!-- Our Mission Section -->
 <section id="mission" class="container my-5">
     <h2 class="text-center">Our Mission</h2>
-    <p class="text-center">Our mission is to empower students with accurate information and trustworthy guidance in choosing the perfect college or institution. As an authoritative body recognized under CHECK oversight, we provide a safe haven from fraudulent consultants and unverified courses, ensuring your educational path is secure and promising.</p>
+    <p class="text-center">Our mission is to empower students with accurate information and trustworthy guidance in
+        choosing the perfect college or institution. As an authoritative body recognized under CHECK oversight, we
+        provide a safe haven from fraudulent consultants and unverified courses, ensuring your educational path is
+        secure and promising.</p>
 </section>
 
-
-
-     <!-- Cards Section -->
-     <!-- Cards Section -->
-<section class="container my-5" id="cardsSection">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="./images/c6d2a4e760054d0ea65da445350b82c9.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" data-en="Personalized Guidance" data-hi="व्यक्तिगत मार्गदर्शन">Personalized Guidance</h5>
-                    <p class="card-text" data-en="We offer personalized guidance to help you navigate the complexities of college admissions." data-hi="हम व्यक्तिगत मार्गदर्शन प्रदान करते हैं ताकि आप कॉलेज प्रवेश के जटिलताओं का समाधान कर सकें।">We offer personalized guidance to help you navigate the complexities of college admissions.</p>
+    <!-- Cards Section -->
+    <section class="container my-5" id="cardsSection">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./images/card1-medical-image1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="registration.html" class="register-link" style="color: red;" data-en="Late Medical Entry Registration &raquo;"
+                                data-hi="लेट मेडिकल एंट्री &raquo;">Late Medical Entry Registration &raquo;</a>
+                        </h5>
+                        <p class="card-text"
+                            data-en="Register for our Late Medical Entry program to receive personalized guidance tailored to your specific needs."
+                            data-hi="अपनी विशेष आवश्यकताओं के अनुसार व्यक्तिगत मार्गदर्शन प्राप्त करने के लिए हमारे लेट मेडिकल एंट्री कार्यक्रम में पंजीकरण करें।">
+                            Register for our Late Medical Entry program to receive personalized guidance tailored to your specific needs.
+                        </p>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./images/images (1).jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: black;">
+                            <a href="rhttps://cee.kerala.gov.in/keam2024/" class="register-link" data-en="Register Now &raquo;"
+                                data-hi="अभी रजिस्टर करें &raquo;">KEAM Candidate Portal &raquo;</a>
+                        </h5>
+                        <p class="card-text"
+                            data-en="Our resources are tailored to provide you with the most accurate and up-to-date information."
+                            data-hi="हमारे संसाधन आपको सबसे सटीक और अपडेटेड जानकारी प्रदान करने के लिए तैयार किए गए हैं।">
+                            Our resources are tailored to provide you with the most accurate and up-to-date information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./images/main-banner13.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: black;">
+                            <a href="https://cdn.digialm.com/EForms/configuredHtml/756/78268/login.html" class="register-link" data-en="Register Now &raquo;"
+                                data-hi="अभी रजिस्टर करें &raquo;">Registration of Non-IIM Institutions Now &raquo;</a>
+                        </h5>
+                        <p class="card-text"
+                            data-en="Take the first step towards your future by registering with us today."
+                            data-hi="अपने भविष्य की ओर पहला कदम उठाएं और आज हमारे साथ रजिस्टर करें।">Take the first step
+                            towards your future by registering with us today.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="./images/images (1).jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" data-en="Accurate Information" data-hi="सटीक जानकारी">Accurate Information</h5>
-                    <p class="card-text" data-en="Our resources are tailored to provide you with the most accurate and up-to-date information." data-hi="हमारे संसाधन आपको सबसे सटीक और अपडेटेड जानकारी प्रदान करने के लिए तैयार किए गए हैं।">Our resources are tailored to provide you with the most accurate and up-to-date information.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="./images/main-banner13.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" style="color: red;">
-                        <a href="registration.html" class="register-link" data-en="Register Now &raquo;" data-hi="अभी रजिस्टर करें &raquo;">Register Now &raquo;</a>
-                    </h5>
-                    <p class="card-text" data-en="Take the first step towards your future by registering with us today." data-hi="अपने भविष्य की ओर पहला कदम उठाएं और आज हमारे साथ रजिस्टर करें।">Take the first step towards your future by registering with us today.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 
 <!-- About Section -->
 <section id="about" class="container my-5">
     <h2 class="text-center">About Us</h2>
-    <p class="text-center">Our organization is dedicated to guiding students towards successful academic careers. We believe in providing comprehensive and trustworthy information to help you make informed decisions about your education. With a focus on integrity and transparency, we strive to be your reliable partner in the college admission process.</p>
+    <p class="text-center">Our organization is dedicated to guiding students towards successful academic careers. We
+        believe in providing comprehensive and trustworthy information to help you make informed decisions about
+        your education. With a focus on integrity and transparency, we strive to be your reliable partner in the
+        college admission process.</p>
 </section>
 
 
@@ -127,13 +139,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./images/pexels-aheworks-723165.jpg" class="d-block w-100" alt="First slide">
+                    <img src="./images/b-tech-online-courses-admission.jpg" class="d-block w-100" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img src="./images/pexels-punttim-5650644.jpg" class="d-block w-100" alt="Second slide">
+                    <img src="./images/depositphotos_68863989-stock-photo-mba-scheme.jpg" class="d-block w-100" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img src="./images/pexels-salma-smida-594929-1375016.jpg" class="d-block w-100" alt="Third slide">
+                    <img src="./images/2022_09_Diploma-courses.jpg" class="d-block w-100" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -147,19 +159,24 @@
         </div>
     </section>
 
-    <!-- Registration Button Section -->
+    <!-- Contact Button Section -->
     <section class="container text-center mb-5">
-        <a href="registration.html" class="btn btn-primary btn-lg">Register Now</a>
+        <a href="contactUs.html" class="btn btn-primary btn-lg">Contact Us</a>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center py-4">
-        &copy; 2024 NGO College Admission
-        <p><a href="#" data-toggle="modal" data-target="#termsModal">Terms and Conditions</a></p>
-    </footer>
+<!-- Footer -->
+<footer class="text-center py-4" style="background-color: #061795db; color: #fff;">
+    <img src="./images/logo.png" alt="IAEC Logo" style="height: 50px; margin-bottom: 10px;">
+    <br>
+    &copy; 2024 Interstate Academic Support Council (IAEC)
+    <p><a href="#" style="color: #fff; text-decoration: underline;" data-toggle="modal" data-target="#termsModal">Terms and Conditions</a></p>
+</footer>
+
+
 
     <!-- Terms and Conditions Modal -->
-    <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -170,18 +187,38 @@
                 </div>
                 <div class="modal-body">
                     <p>*Terms and Conditions*</p>
-                    <p>Welcome to [Your Website Name]. By accessing and using this website, you agree to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern [Your Company Name]'s relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.</p>
+                    <p>Welcome to [Your Website Name]. By accessing and using this website, you agree to comply with and
+                        be bound by the following terms and conditions of use, which together with our privacy policy
+                        govern [Your Company Name]'s relationship with you in relation to this website. If you disagree
+                        with any part of these terms and conditions, please do not use our website.</p>
                     <p>*The use of this website is subject to the following terms of use:*</p>
                     <ol>
-                        <li><strong>General Purpose:</strong> The content of the pages of this website is for your general information and use only. It is subject to change without notice.</li>
-                        <li><strong>Accuracy of Information:</strong> Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness, or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors, and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</li>
-                        <li><strong>Your Responsibility:</strong> Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services, or information available through this website meet your specific requirements.</li>
-                        <li><strong>Unauthorized Use:</strong> This website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).</li>
-                        <li><strong>Privacy Policy:</strong> Your use of this website is also governed by our Privacy Policy, which is incorporated by reference into these terms and conditions.</li>
-                        <li><strong>Governing Law:</strong> Your use of this website and any dispute arising out of such use of the website is subject to the laws of [Your Country/State].</li>
-                        <li><strong>Changes to Terms:</strong> We reserve the right to modify these terms and conditions at any time. You should check this page regularly to ensure that you are aware of any changes.</li>
+                        <li><strong>General Purpose:</strong> The content of the pages of this website is for your
+                            general information and use only. It is subject to change without notice.</li>
+                        <li><strong>Accuracy of Information:</strong> Neither we nor any third parties provide any
+                            warranty or guarantee as to the accuracy, timeliness, performance, completeness, or
+                            suitability of the information and materials found or offered on this website for any
+                            particular purpose. You acknowledge that such information and materials may contain
+                            inaccuracies or errors, and we expressly exclude liability for any such inaccuracies or
+                            errors to the fullest extent permitted by law.</li>
+                        <li><strong>Your Responsibility:</strong> Your use of any information or materials on this
+                            website is entirely at your own risk, for which we shall not be liable. It shall be your own
+                            responsibility to ensure that any products, services, or information available through this
+                            website meet your specific requirements.</li>
+                        <li><strong>Unauthorized Use:</strong> This website may also include links to other websites.
+                            These links are provided for your convenience to provide further information. They do not
+                            signify that we endorse the website(s). We have no responsibility for the content of the
+                            linked website(s).</li>
+                        <li><strong>Privacy Policy:</strong> Your use of this website is also governed by our Privacy
+                            Policy, which is incorporated by reference into these terms and conditions.</li>
+                        <li><strong>Governing Law:</strong> Your use of this website and any dispute arising out of such
+                            use of the website is subject to the laws of [Your Country/State].</li>
+                        <li><strong>Changes to Terms:</strong> We reserve the right to modify these terms and conditions
+                            at any time. You should check this page regularly to ensure that you are aware of any
+                            changes.</li>
                     </ol>
-                    <p>By using this website, you signify your acceptance of these terms and conditions. If you have any questions or concerns about these terms and conditions, please contact us.</p>
+                    <p>By using this website, you signify your acceptance of these terms and conditions. If you have any
+                        questions or concerns about these terms and conditions, please contact us.</p>
                 </div>
             </div>
         </div>

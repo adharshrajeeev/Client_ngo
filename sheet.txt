@@ -1,0 +1,43 @@
+    <!-- Main Banner -->
+    <!-- <div class="jumbotron jumbotron-fluid" style="background-image: url('./images/70143594-education-banner.jpg'); background-size: cover; color: white;">
+        <div class="container text-center">
+            <h1 class="display-4">Welcome to Our College</h1>
+            <p class="lead">Your journey to success starts here</p>
+        </div>
+    </div> -->
+
+
+
+    old navbar
+    <!-- Navbar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">NGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mission">Our Mission</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registration.html">Registration</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="#" data-lang="en">English</a>
+                        <a class="dropdown-item" href="#" data-lang="hi">हिन्दी</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
+    <!-- Navbar -->
