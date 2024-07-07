@@ -207,9 +207,9 @@
 
 
     .modal-transparent-bg {
-        background-color: rgba(0, 0, 0, 0.8) !important; /* Ensure background is black with opacity */
+        background-color: rgb(255, 255, 255) !important; /* Ensure background is black with opacity */
         border: none !important; /* Remove any borders */
-        color: white !important; /* Ensure text color is white */
+        color: rgb(0, 0, 0) !important; /* Ensure text color is white */
     }
     
     .modal-content {
@@ -225,7 +225,7 @@
     }
     
     .modal-backdrop {
-        background-color: rgba(0, 0, 0, 0.5); /* Dim the backdrop for better visibility */
+        background-color: rgb(255, 255, 255); /* Dim the backdrop for better visibility */
     }
     
     .spinner-border.text-primary {

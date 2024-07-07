@@ -19,12 +19,22 @@
             border-radius: 50%;
         }
 
-        .modal-content {
-            background-color: #ffffff !important;
-        }
+        .modal-transparent-bg {
+    background-color: #ffffff !important; /* Ensure background is white */
+    border: none !important; /* Remove any borders */
+    color: black !important; /* Ensure text color is black */
+}
 
-        .modal-backdrop.show {
-            opacity: 0.8;
+.modal-body {
+    color: black !important; /* Ensure text color is black */
+}
+
+        /* Ensure consistent styling on mobile and web */
+        @media (max-width: 576px) {
+            .modal-content {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
         }
     </style>
 </head>
