@@ -189,3 +189,50 @@
     
     
     
+    .toast {
+        background-color: green;
+        color: white;
+        z-index: 1050;
+    }
+
+    #errorToastNotification .toast {
+        background-color: red;
+    }
+
+    .toast.position-fixed {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    .modal-transparent-bg {
+        background-color: rgba(0, 0, 0, 0.8) !important; /* Ensure background is black with opacity */
+        border: none !important; /* Remove any borders */
+        color: white !important; /* Ensure text color is white */
+    }
+    
+    .modal-content {
+        background-clip: padding-box !important;
+        border-radius: 0.3rem !important;
+    }
+    
+    .modal-dialog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh; /* Ensure the dialog is centered vertically */
+    }
+    
+    .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.5); /* Dim the backdrop for better visibility */
+    }
+    
+    .spinner-border.text-primary {
+        color: #007bff !important; /* Ensure the spinner is visible */
+    }
+    
+    .modal-body {
+        color: white !important; /* Ensure text color is white */
+    }
+    

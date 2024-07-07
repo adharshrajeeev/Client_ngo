@@ -15,7 +15,7 @@ $(document).ready(function() {
         // Show loader on submit button
         $('#submitButton').prop('disabled', true);
         $('.spinner-border').show();
-        $('#loadingModal').modal('show');
+        $('#fullPageSpinnerModal').modal('show');
 
         // Proceed with form submission logic
         let name = $('#name').val();
@@ -28,7 +28,7 @@ $(document).ready(function() {
             alert('Please fill out all required fields and upload the certificate photo.');
             $('#submitButton').prop('disabled', false);
             $('.spinner-border').hide();
-            $('#loadingModal').modal('hide');
+            $('#fullPageSpinnerModal').modal('hide');
             return;
         }
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
             $('#phone').addClass('is-invalid');
             $('#submitButton').prop('disabled', false);
             $('.spinner-border').hide();
-            $('#loadingModal').modal('hide');
+            $('#fullPageSpinnerModal').modal('hide');
             return;
         }
 
@@ -48,7 +48,6 @@ $(document).ready(function() {
         formData.append('email', email);
         formData.append('phone', phone);
         formData.append('course', course);
-        
 
         let reader = new FileReader();
         reader.onloadend = function() {
@@ -69,16 +68,17 @@ $(document).ready(function() {
                     clearForm(); // Clear the form after successful submission
                     $('#submitButton').prop('disabled', false);
                     $('.spinner-border').hide();
-                    $('#loadingModal').modal('hide');
+                    $('#fullPageSpinnerModal').modal('hide');
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error('Error:', textStatus, errorThrown);
                     console.error('jqXHR:', jqXHR);
+                    showSuccessToastNotification();
                     // showErrorToastNotification(); // Show error toast notification
                     clearForm(); // Clear the form even if there was an error
                     $('#submitButton').prop('disabled', false);
                     $('.spinner-border').hide();
-                    $('#loadingModal').modal('hide');
+                    $('#fullPageSpinnerModal').modal('hide');
                 }
             });
         };
@@ -202,11 +202,10 @@ const translations = {
         journeyMessage: "आपकी सफलता की यात्रा यहां से शुरू होती है",
         aboutUs: "हमारे बारे में",
         aboutUsText: "हमारा संगठन छात्रों को सफल शैक्षणिक करियर की ओर मार्गदर्शन करने के लिए समर्पित है। हमें विश्वसनीय और विश्वसनीय जानकारी प्रदान करने में विश्वास है ताकि आप अपने शिक्षा के बारे में सूचित निर्णय ले सकें। ईमानदारी और पारदर्शिता पर ध्यान केंद्रित करके, हम कॉलेज प्रवेश प्रक्रिया में आपका विश्वसनीय साथी बनने का प्रयास करते हैं।",
-        registerNow: "  लेट मेडिकल एंट्री »",
+        registerNow: "लेट मेडिकल एंट्री »",
         ourMisson: "हमारा मिशन",
         ourMissionText: "हमारा मिशन छात्रों को सही जानकारी और विश्वसनीय मार्गदर्शन प्रदान करना है ताकि वे सही कॉलेज या संस्थान चुन सकें। एक CHECK पर देखरेख के तहत मान्यता प्राप्त देहायक शरण अप्रमाणिक सलाहकारों और अप्रमाणिक पाठ्यक्रमों से सुरक्षित और वादात्मक शिक्षात्मक पथ सुनिश्चित करते हैं।"
     }
-
 };
 
 function changeFontSize(action) {

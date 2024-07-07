@@ -168,14 +168,14 @@
                     style="display: none; width: 150px;">
             </div>
             <button type="submit" class="btn btn-primary position-relative" id="submitButton">
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                <!-- <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> -->
                 Submit
             </button>
         </form>
     </section>
 
     <!-- Toast Notification -->
-    <div class="toast" id="toastNotification" data-delay="3000">
+    <div class="toast position-fixed" id="toastNotification" data-delay="3000">
         <div class="toast-header">
             <strong class="mr-auto">Notification</strong>
             <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
@@ -197,19 +197,20 @@
     </div>
 
     <!-- Full-page Spinner Modal -->
-    <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="fullPageSpinnerModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content modal-transparent-bg">
                 <div class="modal-body text-center">
                     <div class="spinner-border text-primary" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
-                    <p style="color: white;" class="mt-3">Uploading certificate and details. This may take a few
-                        moments...</p>
+                    <p class="text-white mt-2">Processing, please wait...</p>
                 </div>
             </div>
         </div>
     </div>
+    
+    
 
 <!-- Footer -->
 <footer class="text-center py-4" style="background-color: #061795db; color: #fff;">
