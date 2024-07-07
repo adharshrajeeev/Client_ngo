@@ -109,40 +109,59 @@
             </div>
             <div class="form-group">
                 <label for="inputState">Course</label>
-                <select id="inputState" class="form-control">                
+                <select id="inputState" class="form-control" name="course">
                     <!-- Undergraduate Medical Courses -->
-                    <option>MBBS</option>
-                    <option>BDS</option>
-                    <option>BPT</option>
-                    <option>B.Sc Nursing</option>
-                    <option>B.Pharm</option>
-                    <option>BAMS</option>
-                    <option>BHMS</option>
-                    <option>BUMS</option>
-                    <option>BOT</option>
-                    <option>BMLT</option>
+                    <option disabled selected value="">-- Select a Course --</option>
+                    <option value="MBBS">MBBS</option>
+                    <option value="BDS">BDS</option>
+                    <option value="BPT">BPT</option>
+                    <option value="B.Sc Nursing">B.Sc Nursing</option>
+                    <option value="B.Pharm">B.Pharm</option>
+                    <option value="BAMS">BAMS</option>
+                    <option value="BHMS">BHMS</option>
+                    <option value="BUMS">BUMS</option>
+                    <option value="BOT">BOT</option>
+                    <option value="BMLT">BMLT</option>
+                
                     <!-- Diploma Medical Courses -->
-                    <option>DMLT</option>
-                    <option>Diploma in Radiology Technology</option>
-                    <option>Diploma in Physiotherapy</option>
-                    <option>Diploma in Nursing</option>
-                    <option>D.Pharm</option>
-                    <option>Diploma in Ophthalmic Technology</option>
-                    <option>Diploma in Medical Record Technology</option>
-                    <option>Diploma in Anaesthesia Technology</option>
-                    <option>Diploma in Clinical Pathology</option>
-                    <option>DCH</option>
-                </select>
+                    <option disabled style="font-weight: bold;">-- Diploma Medical Courses --</option>
+                    <option value="DMLT">DMLT</option>
+                    <option value="Diploma in Radiology Technology">Diploma in Radiology Technology</option>
+                    <option value="Diploma in Physiotherapy">Diploma in Physiotherapy</option>
+                    <option value="GNM">GNM</option>
+                    <option value="D.Pharm">D.Pharm</option>
+                    <option value="Diploma in Ophthalmic Technology">Diploma in Ophthalmic Technology</option>
+                    <option value="Diploma in Medical Record Technology">Diploma in Medical Record Technology</option>
+                    <option value="Diploma in Anaesthesia Technology">Diploma in Anaesthesia Technology</option>
+                    <option value="Diploma in Clinical Pathology">Diploma in Clinical Pathology</option>
+                    <option value="DCH">DCH</option>
+                
+                    <!-- Paramedical Courses -->
+                    <option disabled style="font-weight: bold;">-- Paramedical Courses --</option>
+                    <option value="BSc Medical Imaging Technology (MIT)">BSc Medical Imaging Technology (MIT)</option>
+                    <option value="BSc Anaesthesia & Operation Theatre Technology (AT&OT)">BSc Anaesthesia & Operation Theatre Technology (AT&OT)</option>
+                    <option value="BSc Physician Assistant (PA)">BSc Physician Assistant (PA)</option>
+                    <option value="BSc Cardiovascular Technology (CVT)">BSc Cardiovascular Technology (CVT)</option>
+                    <option value="BSc Perfusion Technology">BSc Perfusion Technology</option>
+                    <option value="BSc Renal Dialysis Technology">BSc Renal Dialysis Technology</option>
+                    <option value="BSc Neuroscience Technology">BSc Neuroscience Technology</option>
+                    <option value="BSc Virology & Immunology">BSc Virology & Immunology</option>
+                    <option value="BSc Emergency Medicine (Accident & Emergency Care Technology)">BSc Emergency Medicine (Accident & Emergency Care Technology)</option>
+                    <option value="BSc Medical Laboratory Technology (MLT)">BSc Medical Laboratory Technology (MLT)</option>
+                    <option value="BSc Critical Care">BSc Critical Care</option>
+                    <option value="BSc Clinical Psychology">BSc Clinical Psychology</option>
+                    <option value="BSc Medical Record Science">BSc Medical Record Science</option>
+                </select>                               
             </div>
             
             <div class="form-group">
-                <label for="certificatePhoto">Document</label>
+                <label for="certificatePhoto">12th Certificate</label>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="certificatePhoto" name="certificatePhoto"
                         accept="image/*" data-preview="certificatePhotoPreview" required>
-                    <label class="custom-file-label" for="certificatePhoto">Choose file</label>
+                    <label class="custom-file-label" for="certificatePhoto">Choose image for 12th Certificate</label>
                     <div class="invalid-feedback">
-                        Please choose a Document.
+                        Please choose a image for 12th certificate.
                     </div>
                 </div>
                 <img id="certificatePhotoPreview" src="#" alt="Document Preview" class="img-thumbnail mt-2"

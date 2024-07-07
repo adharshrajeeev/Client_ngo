@@ -21,6 +21,7 @@ $(document).ready(function() {
         let name = $('#name').val();
         let email = $('#email').val();
         let phone = $('#phone').val();
+        let course = $('#inputState').val(); // Get selected course value
         let certificatePhotoFile = $('#certificatePhoto')[0].files[0];
 
         if (!name || !email || !phone || !certificatePhotoFile) {
@@ -46,6 +47,8 @@ $(document).ready(function() {
         formData.append('name', name);
         formData.append('email', email);
         formData.append('phone', phone);
+        formData.append('course', course);
+        
 
         let reader = new FileReader();
         reader.onloadend = function() {
