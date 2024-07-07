@@ -1,3 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.modal-body {
+    color: black;
+}
+
+.custom-file-input:lang(en)~.custom-file-label::after {
+    content: "Browse";
+}
+
 .jumbotron {
     position: relative;
     height: 400px;
@@ -233,6 +251,6 @@
     }
     
     .modal-body {
-        color: white !important; /* Ensure text color is white */
+        color: rgb(0, 0, 0) !important; /* Ensure text color is white */
     }
     

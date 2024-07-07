@@ -65,10 +65,10 @@ $(document).ready(function() {
                 success: function(response) {
                     console.log('Success:', response);
                     showSuccessToastNotification(); // Show success toast notification
-                    clearForm(); // Clear the form after successful submission
-                    $('#submitButton').prop('disabled', false);
-                    $('.spinner-border').hide();
-                    $('#fullPageSpinnerModal').modal('hide');
+             clearForm(); // Clear the form after successful submission
+                 $('#submitButton').prop('disabled', false);
+            $('.spinner-border').hide();
+               $('#fullPageSpinnerModal').modal('hide');
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error('Error:', textStatus, errorThrown);
