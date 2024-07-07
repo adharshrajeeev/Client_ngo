@@ -166,20 +166,24 @@
     .dropdown-menu {
         text-align: center; /* Center align the text */
     }
-    
-    @media (max-width: 768px) {
-        .search-bar {
-            width: 80%;
-        }
-    
+    @media (max-width: 576px) {
         .search-dropdown-container {
             flex-direction: column;
             width: 100%;
+            align-items: stretch;
         }
     
-        .dropdown-menu {
-            width: 100%; /* Ensure the dropdown spans the full width */
-            text-align: center; /* Center align the text */
+        .input-group {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    
+        .dropdown {
+            width: 100%;
+        }
+    
+        .dropdown .btn {
+            width: 100%;
         }
     }
     
